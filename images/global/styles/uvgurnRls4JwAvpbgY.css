@@ -1,0 +1,49 @@
+/**
+ *   Seaboard Virtual Airline || Version 0.0.1 || Grid Document || http://images.seaboardair.com/
+ * 
+ *   All content and code of this website is the property of Seaboard Virtual Airline and webmaster, Michael Brewster (Copyright 2013).
+ *   Security and IP logging is enabled for site protection.  Any attempt to deface or exploit any content or code of this website will be documented and turned over to proper authorities.
+ *   Requests for licensing or redistribution of any content or code can be handled by contacting webmaster, Michael Brewster. metbrewster@gmail.com
+ *   You are also welcome to join the Blue Riband Central teamspeak at ts3://public.brcserver.us/
+ */
+
+/**
+ *   Column Styles
+ */
+
+.column.first, .column.last { margin-left: 0 !important }
+.column.last { float: right !important }
+.column.first { float: left; }
+.column { float: left; }
+
+/**
+ *   Width specifications for columns
+ */
+
+.grid2col .column { width: 49% }
+.grid2col .grid2col .column { width: 47.8% }
+.grid3col .grid2col .column { width: 46% }
+.grid4col .grid2col .column { width: 45% }
+.grid2cola .column.first { width: 66% }
+.grid2cola .column.last { width: 32% }
+.grid2colb .column.first { width: 74.9% }
+.grid2colb .column.last { width: 23% }
+.grid2colc .column.first { width: 32% }
+.grid2colc .column.last { width: 66% }
+.grid2cold .column.first { width: 23% }
+.grid2cold .column.last { width: 74.9% }
+.grid2cole .column.first { width: 79% }
+.grid2cole .column.last { width: 19% }
+.grid2colf .column.first { width: 19% }
+.grid2colf .column.last { width: 79% }
+.grid3col .column { width: 32%; margin-left: 2%; }
+.grid2col .grid3col .column { width: 31% }
+.grid3cola .column { width: 58%; margin-left: 2%; }
+.grid3cola .column.first, .grid3cola .column.last { width: 19% }
+.grid4col .column { width: 23%; margin-left: 3%; }
+.grid5col .column { width: 18.4%; margin-left: 2%; }
+.grid6col .column { width: 15%; margin-left: 2%; }
+
+/**
+ *   Grid setting clearfix
+ */
