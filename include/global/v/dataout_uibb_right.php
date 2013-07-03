@@ -1,7 +1,7 @@
 <?php
 
 		/// ARRAY TO STORE LEFT PADDLE LINK AND TEXT
-						$uibb_right_array = array('Login' => '#');
+						$uibb_right_array = array('Login' => 'http://beta.seaboardair.com/login.php');
 						
 		///	OUTPUT LEFT ARRAY INFORMATION TO BROWSER
 						foreach ($uibb_right_array as $text => $anchor) {
