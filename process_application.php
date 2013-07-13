@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 
 if (isset($_POST['q13']) && $_POST['q13'] == 'c') {
 	
@@ -46,12 +47,13 @@ if (isset($_POST['q13']) && $_POST['q13'] == 'c') {
 											$_SESSION['quiz_marker'] = 1;
 											$_SESSION['quiz_count'] = $total_correct;
 											echo "scored: ".$_SESSION['quiz_count'];
-											die("passed");
+           // die();
+											header("Location: apply.php?c=1");
 										} else {
 											$_SESSION['quiz_marker'] = 0;
 											$_SESSION['quiz_count'] = $total_correct;
-											echo "scored: ".$_SESSION['quiz_count'];
-											die("failed quiz");
+           $_SESSION['Failed'] = 1;
+											header("Location: apply.php");
 										}
 
 } else {

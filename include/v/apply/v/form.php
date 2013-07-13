@@ -6,13 +6,65 @@ if (isset($_SESSION['veri']) && $_SESSION['veri'] === false) {
 	die();
 	// The user did not pass verify stage
 } else if (isset($_SESSION['process_issue']) && $_SESSION['process_issue'] == 1) {
-	echo "MISSING QUIZ"; die();
+ session_destroy(); echo "<div class='uiBoxRed pam mtl'><b>You did not answer all of the questions.</b><br><p>Please select the correct answer for each question. <a href='apply.php'>Go back to the apply page</p></div>";
 	// The user did not answer all the questions
-} else if (isset($_SESSION['quiz_marker']) && $_SESSION['quiz_marker'] == 0) {
-	echo "PASSED QUIZ"; die();
+} else if (isset($_GET['c']) && $_GET['c'] == 1) {
+ echo "<div class='uiBoxYellow pam mtl'><b>You have passed the quiz.</b><br><p>Please enter your contact information below so an admin can contact you.</p></div>";
+echo '
+<form name="contactform" method="post" action="apply_form.php">
+<table width="450px">
+<tr>
+ <td valign="top">
+  <label for="first_name">First Name *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="last_name">Last Name *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="last_name" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="email">Email Address *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="email" maxlength="80" size="30">
+ </td>
+</tr>
+<tr style="visibility: hidden;">
+ <td valign="top">
+  <label for="telephone">Score Number</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="telephone" maxlength="30" size="30" value="'. $_SESSION['quiz_count'].'">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="comments">Tell us about yourself (including age, favorite aircraft etc)*</label>
+ </td>
+ <td valign="top">
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" style="text-align:center">
+  <input type="submit" value="Submit">
+ </td>
+</tr>
+</table>
+</form>
+';
 	// the user failed the quiz
-} else if (isset($_SESSION['quiz_marker']) && $_SESSION['quiz_marker'] == 1) {
-	echo "FAILED QUIZ"; die();
+} else if (isset($_SESSION['Failed']) && $_SESSION['Failed'] == 1) {
+ echo "<div class='uiBoxRed pam mtl'><b>oops! You did not pass the quiz, you can try again by refreshing the page.</b><br><p>Remember, when answering the verification question, use the order of operations to work out the correct answer, you should also remember to think before answering each question.</p></div>";
+ unset($_SESSION['Failed']);
 	// the user passed the quiz
 } else {
 
